@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
 # Load the data
-data = pd.read_csv('nyc_weather_data.csv')
+data = pd.read_csv('miami.csv')
 
 # Extract temperature, rainfall, and humidity columns
 X = data.iloc[:, 2:].values
@@ -33,4 +33,4 @@ plt.show()
 # Determine the best time to travel to NYC
 best_time_cluster = np.argmin(centers[:, 2])  # Index of cluster with lowest humidity center
 best_time_month = data.iloc[labels == best_time_cluster, 1].mode()[0]  # Most common month in best cluster
-print(f'The best time to travel to New York City is in {best_time_month}.')
+print(f'The best time to travel to Miami is in {best_time_month}.')
